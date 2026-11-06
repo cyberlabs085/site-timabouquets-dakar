@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timabouquets 💐 — Fleuriste d'Élite &amp; Bouquets Frais à Dakar</title>
+  <meta name="description" content="Maison florale à Dakar : bouquets de fleurs fraîches, roses d'exception et créations romantiques livrées le jour même partout au Sénégal.">
+  <link rel="icon" href="https://timabouquets.netlify.app/img/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FDF9F6;
+      color: #24352B;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(253,249,246,0.92) 0%, rgba(250,244,239,0.7) 100%);
+    }
+    .filter-btn.active {
+      background-color: #2E4839;
+      color: #FFFFFF;
+      border-color: #2E4839;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#C86D51] selection:text-white relative">
+
+  <!-- ================= BANDEAU D'ANNONCE VIP LIVRAISON DAKAR ================= -->
+  <div class="bg-[#2E4839] text-[#FDF9F6] text-xs font-mono py-2.5 px-4 text-center tracking-wider flex items-center justify-center space-x-3">
+    <span class="w-2 h-2 rounded-full bg-[#E8C4B8] animate-ping"></span>
+    <span>💐 <strong>LIVRAISON EXPRESS LE JOUR MÊME À DAKAR</strong> &bull; Fleurs fraîches garanties &bull; Commandes : +221 77 747 54 20</span>
+  </div>
+
+  <!-- ================= HEADER HAUTE FLEURISTERIE ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#FDF9F6]/90 border-b border-[#EEDDD4] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <!-- Logo et Titre de Marque -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-12 h-12 rounded-full overflow-hidden p-1 bg-white shadow-sm border border-[#EEDDD4] flex items-center justify-center group-hover:scale-105 transition-transform">
+          <img src="https://timabouquets.netlify.app/img/logo.png" alt="Timabouquets" class="w-full h-full object-cover rounded-full" />
+        </div>
+        <div>
+          <span class="font-serif font-bold text-2xl tracking-tight text-[#1F2F25] block leading-none">Timabouquets</span>
+          <span class="text-[10px] font-mono uppercase tracking-widest text-[#C86D51]">Maison Florale &bull; Dakar</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-[#5C6E63]">
+        <a href="#collection" class="hover:text-[#2E4839] transition-colors">La Collection</a>
+        <a href="#engagements" class="hover:text-[#2E4839] transition-colors">Nos Engagements</a>
+        <a href="#mariages" class="hover:text-[#2E4839] transition-colors">Mariages &amp; Événements</a>
+        <a href="#avis" class="hover:text-[#2E4839] transition-colors">Avis</a>
+        <a href="#faq" class="hover:text-[#2E4839] transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-[#2E4839] transition-colors">Contact</a>
+      </nav>
+
+      <!-- Réseaux Sociaux & CTA WhatsApp -->
+      <div class="flex items-center space-x-3">
+        <a href="https://instagram.com/timabouquets" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white border border-[#EEDDD4] text-[#2E4839] hover:text-[#C86D51] hover:border-[#C86D51] flex items-center justify-center transition-colors shadow-sm" title="Instagram @timabouquets">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@timabouquets" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white border border-[#EEDDD4] text-[#2E4839] hover:text-[#C86D51] hover:border-[#C86D51] flex items-center justify-center transition-colors shadow-sm" title="TikTok @timabouquets">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20un%20bouquet%20de%20fleurs." target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-2">
+          <span>Commander</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION POÉTIQUE & HAUTE COUTURE ================= -->
+  <section class="relative min-h-[90vh] flex items-center px-4 sm:px-8 py-16 max-w-7xl mx-auto overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      
+      <!-- Texte Hero (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col items-start text-left z-10">
+        <div class="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider mb-6 bg-white border border-[#EEDDD4] text-[#C86D51] shadow-sm">
+          <span>🌸 MAISON FLORALE &bull; FLEURS FRAÎCHES DAKAR</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-serif font-normal italic tracking-tight leading-[1.02] mb-6 text-[#1F2F25]">
+          L’Art de faire parler les fleurs et d’offrir des émotions.
+        </h1>
+
+        <p class="text-base sm:text-xl font-light text-[#5C6E63] max-w-2xl leading-relaxed mb-8">
+          Des créations florales d'exception façonnées à la main avec amour dans notre atelier à Dakar. Pour déclarer votre amour, célébrer un mariage ou illuminer une journée spéciale avec élégance.
+        </p>
+
+        <!-- Piliers de réassurance rapide -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 w-full max-w-xl mb-10 text-xs font-mono text-[#2E4839]">
+          <div class="p-3 rounded-2xl bg-white border border-[#EEDDD4] flex items-center space-x-2 shadow-sm">
+            <span class="text-base">🌸</span>
+            <span>Arrivage Quotidien</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-white border border-[#EEDDD4] flex items-center space-x-2 shadow-sm">
+            <span class="text-base">⏱️</span>
+            <span>Livraison &lt; 3h Dakar</span>
+          </div>
+          <div class="p-3 rounded-2xl bg-white border border-[#EEDDD4] flex items-center space-x-2 shadow-sm col-span-2 sm:col-span-1">
+            <span class="text-base">💳</span>
+            <span>Wave &amp; OM Direct</span>
+          </div>
+        </div>
+
+        <!-- Boutons d'Action -->
+        <div class="flex flex-col sm:flex-row items-center space-y-3.5 sm:space-y-0 sm:space-x-5 w-full sm:w-auto">
+          <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20un%20bouquet%20en%20livraison%20rapide." target="_blank" rel="noopener" class="w-full sm:w-auto px-9 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2.5">
+            <span>Commander sur WhatsApp</span>
+            <span>💬</span>
+          </a>
+          <a href="#collection" class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-white border border-[#EEDDD4] text-[#2E4839] hover:border-[#2E4839] shadow-sm text-center transition-all">
+            Découvrir la Collection (14) ↓
+          </a>
+        </div>
+      </div>
+
+      <!-- Composition Visuelle Hero (5 cols avec VRAIE photo client) -->
+      <div class="lg:col-span-5 relative flex justify-center z-10">
+        <div class="relative w-full max-w-md aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+          <img src="https://timabouquets.netlify.app/img/Honeymoon.jpeg" alt="Bouquet Honeymoon Timabouquets" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+          <!-- Badge Flottant en bas de l'image -->
+          <div class="absolute bottom-5 inset-x-5 p-4 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#EEDDD4] shadow-xl flex items-center justify-between">
+            <div>
+              <div class="text-[11px] font-mono uppercase tracking-wider text-[#C86D51] font-bold">Bouquet Signature</div>
+              <div class="font-serif font-bold text-xl text-[#1F2F25]">Honeymoon &bull; 35 000 FCFA</div>
+            </div>
+            <a href="https://wa.me/221777475420?text=Bonjour%20je%20souhaite%20commander%20le%20bouquet%20Honeymoon" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-[#2E4839] text-white flex items-center justify-center shadow hover:scale-110 transition-transform">
+              →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= BANDEAU DES 4 ENGAGEMENTS D'EXCELLENCE ================= -->
+  <section id="engagements" class="py-16 px-4 sm:px-8 max-w-7xl mx-auto border-t border-[#EEDDD4]">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm text-center">
+        <div class="text-3xl mb-3">🌹</div>
+        <h4 class="font-serif font-bold text-xl text-[#1F2F25] mb-2">Fleurs d'Arrivage Frais</h4>
+        <p class="text-xs text-[#5C6E63] font-light leading-relaxed">Tiges méticuleusement sélectionnées pour une tenue et un éclat prolongés de plus de 7 jours.</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm text-center">
+        <div class="text-3xl mb-3">⏱️</div>
+        <h4 class="font-serif font-bold text-xl text-[#1F2F25] mb-2">Livraison Express &lt; 3h</h4>
+        <p class="text-xs text-[#5C6E63] font-light leading-relaxed">Partout à Dakar et sa banlieue. Remise soignée en mains propres à domicile ou au bureau.</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm text-center">
+        <div class="text-3xl mb-3">💌</div>
+        <h4 class="font-serif font-bold text-xl text-[#1F2F25] mb-2">Carte Manuscrite Offerte</h4>
+        <p class="text-xs text-[#5C6E63] font-light leading-relaxed">Chaque bouquet est accompagné d'une carte d'élégance avec votre mot doux calligraphié à la main.</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm text-center">
+        <div class="text-3xl mb-3">💳</div>
+        <h4 class="font-serif font-bold text-xl text-[#1F2F25] mb-2">Paiement 100% Sécurisé</h4>
+        <p class="text-xs text-[#5C6E63] font-light leading-relaxed">Règlement simplifié sans frais via Wave, Orange Money ou à la livraison selon votre convenance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION COLLECTION COMPLÈTE (14 BOUQUETS RÉELS AVEC FILTRES) ================= -->
+  <section id="collection" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto border-t border-[#EEDDD4]">
+    <div class="text-center mb-12">
+      <div class="text-xs font-mono font-bold uppercase tracking-widest text-[#C86D51] mb-2">CRÉATIONS FLORALES ORIGINALES</div>
+      <h2 class="text-4xl sm:text-6xl font-serif font-normal italic text-[#1F2F25] mb-4">La Collection Complète</h2>
+      <p class="text-sm sm:text-base text-[#5C6E63] font-light max-w-xl mx-auto mb-8">
+        Explorez nos 14 bouquets signatures. Chaque bouquet est confectionné à la commande avec des fleurs d'une fraîcheur absolue.
+      </p>
+
+      <!-- Boutons de Filtres Interactifs -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5">
+        <button class="filter-btn active px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#EEDDD4] bg-[#2E4839] text-white shadow-sm transition-all" data-filter="all">
+          Tous les Bouquets (14)
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#EEDDD4] bg-white text-[#5C6E63] hover:border-[#2E4839] shadow-sm transition-all" data-filter="romance">
+          Romance &amp; Déclaration (5)
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#EEDDD4] bg-white text-[#5C6E63] hover:border-[#2E4839] shadow-sm transition-all" data-filter="pastel">
+          Élégance &amp; Pastel (5)
+        </button>
+        <button class="filter-btn px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider border border-[#EEDDD4] bg-white text-[#5C6E63] hover:border-[#2E4839] shadow-sm transition-all" data-filter="mariage">
+          Mariage &amp; Bride (4)
+        </button>
+      </div>
+    </div>
+
+    <!-- Grille des 14 Bouquets avec vraies photos et tarifs en FCFA -->
+    <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="pastel">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Blush.jpeg" alt="Bouquet Blush" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Coup de Cœur
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          20 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Élégance & Pastel</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Blush</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Un bouquet poudré aux teintes douces de rose et crème, idéal pour exprimer une délicate attention ou un remerciement sincère.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Blush%20(20%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Dearest.jpeg" alt="Bouquet Dearest" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Signature
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          25 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Dearest</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Harmonie florale chaleureuse aux nuances passionnées, créée pour toucher le cœur d'une personne qui compte particulièrement.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Dearest%20(25%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Honeymoon.jpeg" alt="Bouquet Honeymoon" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Prestige
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          35 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Honeymoon</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Composition généreuse et somptueuse célébrant l'amour fou, la lune de miel et les grandes déclarations inoubliables.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Honeymoon%20(35%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Bloom.jpeg" alt="Bouquet Bloom" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Grand Format
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          40 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Bloom</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">L'apogée de notre savoir-faire floral : un volume spectaculaire de fleurs fraîches d'une intensité visuelle remarquable.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Bloom%20(40%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="mariage">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Bridetobe.png" alt="Bouquet Bride to be" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Mariage
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          25 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Mariage & Fiançailles</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Bride to be</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Conçu spécialement pour la future mariée, les fiançailles, enterrements de vie de jeune fille et shootings d'apparat.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Bride%20to%20be%20(25%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="pastel">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Aurora.jpeg" alt="Bouquet Aurora" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Lumière
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          23 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Élégance & Pastel</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Aurora</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Inspiré par les premières lueurs de l'aube : des nuances légères et lumineuses qui apportent sérénité et gaieté.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Aurora%20(23%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="pastel">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Ivy.jpeg" alt="Bouquet Ivy" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Naturel
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          23 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Élégance & Pastel</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Ivy</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Un équilibre subtil entre feuillage noble et fleurs champêtres, pour une élégance naturelle et contemporaine.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Ivy%20(23%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="mariage">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Pearl.jpeg" alt="Bouquet Pearl" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Pureté
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          20 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Mariage & Fiançailles</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Pearl</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Pureté immaculée des pétales blancs rehaussés de touches vertes discrètes. Symbolise la sincérité et la paix.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Pearl%20(20%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/roses.png" alt="Bouquet Roses Prestige" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Best-Seller
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          40 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Roses Prestige</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Grand bouquet majestueux de roses d'exception soigneusement épanouies, habillées dans notre packaging haute couture.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Roses%20Prestige%20(40%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/roses1.png" alt="Bouquet Roses Romantiques" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Romance
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          30 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Roses Romantiques</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Le classique intemporel pour célébrer un anniversaire, la Saint-Valentin ou simplement dire 'je pense à toi'.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Roses%20Romantiques%20(30%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="romance">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/roses2.png" alt="Bouquet Roses Délicates" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Doux Prix
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          15 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Romance & Déclaration</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Roses Délicates</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Format compact et raffiné de roses fraîches, parfait pour une délicate attention quotidienne sans occasion particulière.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Roses%20D%C3%A9licates%20(15%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="pastel">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Ethereal.jpeg" alt="Bouquet Ethereal" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Poétique
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          23 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Élégance & Pastel</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Ethereal</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Une création poétique vaporeuse aux nuances d'albâtre et de blush, pour un sentiment d'apesanteur et de grâce.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Ethereal%20(23%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="pastel">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Tender.jpeg" alt="Bouquet Tender" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Tendresse
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          25 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Élégance & Pastel</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Tender</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Un bouquet empreint de douceur et de tendresse, composé pour réchauffer les cœurs et créer un sourire instantané.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Tender%20(25%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+
+    <article class="product-card group relative bg-white rounded-3xl overflow-hidden border border-[#EEDDD4] shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col justify-between" data-category="mariage">
+      <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#FAF4EF]">
+        <img src="https://timabouquets.netlify.app/img/Marie.png" alt="Bouquet Marie" class="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out" loading="lazy" />
+        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-white/95 text-[#2E4839] shadow-md backdrop-blur-md">
+          Événement
+        </span>
+        <span class="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-[#2E4839] text-[#FDF9F6] shadow-lg">
+          17 000 FCFA
+        </span>
+      </div>
+
+      <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-widest text-[#C86D51] mb-1.5">Mariage & Fiançailles</div>
+          <h3 class="text-2xl font-serif font-bold text-[#1F2F25] mb-2 tracking-tight group-hover:text-[#C86D51] transition-colors">Marie</h3>
+          <p class="text-xs text-[#5C6E63] font-light leading-relaxed mb-6">Composition florale fraîche et épurée, alliant sobriété noble et fraîcheur éclatante pour toutes vos réceptions.</p>
+        </div>
+
+        <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20le%20bouquet%20Marie%20(17%20000%20FCFA)%20vu%20sur%20votre%20site." target="_blank" rel="noopener" class="w-full py-3.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-md hover:shadow-lg transition-all duration-300">
+          <span>Commander sur WhatsApp</span>
+          <span>💐</span>
+        </a>
+      </div>
+    </article>
+  
+    </div>
+  </section>
+
+  <!-- ================= SECTION MARIAGES & SUR-MESURE ================= -->
+  <section id="mariages" class="py-20 px-4 sm:px-8 max-w-7xl mx-auto border-t border-[#EEDDD4]">
+    <div class="p-10 sm:p-16 rounded-[3rem] bg-[#2E4839] text-[#FDF9F6] shadow-2xl relative overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        <div class="lg:col-span-8">
+          <div class="text-xs font-mono uppercase tracking-widest text-[#E8C4B8] mb-3 font-bold">PRESTATIONS SUR-MESURE &bull; DAKAR</div>
+          <h2 class="text-4xl sm:text-6xl font-serif font-normal italic mb-6 leading-tight">
+            Mariages, Fiançailles &amp; Grandes Célébrations
+          </h2>
+          <p class="text-sm sm:text-base font-light text-neutral-200 leading-relaxed mb-8 max-w-2xl">
+            Vous rêvez d'une scénographie florale inoubliable pour votre mariage, d'un bouquet de mariée exclusif ou d'une décoration de réception somptueuse à Dakar ? Notre directrice artistique florale conçoit votre univers sur-mesure.
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs font-mono text-[#E8C4B8] mb-8">
+            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20">👰 Bouquets de Mariée</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20">💍 Arches de Fiançailles</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20">✨ Centres de Tables</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20">🏢 Événements Corporatifs</span>
+          </div>
+          <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20un%20devis%20sur-mesure%20pour%20un%20mariage%20ou%20%C3%A9v%C3%A9nement." target="_blank" rel="noopener" class="inline-flex px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-[#C86D51] hover:bg-white hover:text-[#2E4839] text-white shadow-xl transition-all">
+            Demander un Devis Mariage sur WhatsApp →
+          </a>
+        </div>
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="w-full max-w-xs aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20">
+            <img src="https://timabouquets.netlify.app/img/Bridetobe.png" alt="Mariage Timabouquets" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION AVIS CLIENTS & PREUVE SOCIALE ================= -->
+  <section id="avis" class="py-20 px-4 sm:px-8 max-w-6xl mx-auto border-t border-[#EEDDD4]">
+    <div class="text-center mb-14">
+      <div class="text-xs font-mono font-bold uppercase tracking-widest text-[#C86D51] mb-2">MOTS DOUX DE NOS CLIENTS</div>
+      <h2 class="text-4xl sm:text-5xl font-serif font-normal italic text-[#1F2F25]">Des Émotions Partagées</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-sm font-light text-[#5C6E63] italic leading-relaxed mb-6">
+            "J'ai commandé le bouquet Honeymoon pour l'anniversaire de ma femme. Livré en 2h chrono aux Almadies. Les roses étaient encore plus belles en vrai que sur les photos !"
+          </p>
+        </div>
+        <div class="flex items-center space-x-3 pt-4 border-t border-neutral-100">
+          <div class="w-9 h-9 rounded-full bg-[#2E4839] text-white flex items-center justify-center font-bold text-xs">M</div>
+          <div>
+            <div class="font-bold text-xs text-[#1F2F25]">Mamadou Kane</div>
+            <div class="text-[10px] font-mono text-neutral-400">Dakar Almadies</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-sm font-light text-[#5C6E63] italic leading-relaxed mb-6">
+            "Le bouquet Bride to be pour mes fiançailles a fait sensation. Les finitions, le ruban de satin et la carte personnalisée calligraphiée... un travail de vraie haute fleuristerie."
+          </p>
+        </div>
+        <div class="flex items-center space-x-3 pt-4 border-t border-neutral-100">
+          <div class="w-9 h-9 rounded-full bg-[#C86D51] text-white flex items-center justify-center font-bold text-xs">A</div>
+          <div>
+            <div class="font-bold text-xs text-[#1F2F25]">Aïssatou Ndiaye</div>
+            <div class="text-[10px] font-mono text-neutral-400">Dakar Plateau</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-white border border-[#EEDDD4] shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="text-amber-500 mb-4 text-sm tracking-widest">★★★★★</div>
+          <p class="text-sm font-light text-[#5C6E63] italic leading-relaxed mb-6">
+            "Habitant à Paris, je voulais faire livrer des fleurs à ma mère à Dakar pour sa fête. Tout s'est fait sur WhatsApp en 5 minutes avec paiement Wave. Service impeccable."
+          </p>
+        </div>
+        <div class="flex items-center space-x-3 pt-4 border-t border-neutral-100">
+          <div class="w-9 h-9 rounded-full bg-[#2E4839] text-white flex items-center justify-center font-bold text-xs">P</div>
+          <div>
+            <div class="font-bold text-xs text-[#1F2F25]">Papa Demba Diop</div>
+            <div class="text-[10px] font-mono text-neutral-400">Diaspora &bull; Paris</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION FAQ INTERACTIVE ================= -->
+  <section id="faq" class="py-20 px-4 sm:px-8 max-w-4xl mx-auto border-t border-[#EEDDD4]">
+    <div class="text-center mb-14">
+      <div class="text-xs font-mono font-bold uppercase tracking-widest text-[#C86D51] mb-2">TRANSPARENCE &amp; CONSEILS</div>
+      <h2 class="text-4xl sm:text-5xl font-serif font-normal italic text-[#1F2F25]">Questions Fréquentes</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="faq-item rounded-2xl bg-white border border-[#EEDDD4] overflow-hidden shadow-sm">
+        <button class="faq-btn w-full px-6 py-5 text-left font-bold text-base flex justify-between items-center text-[#1F2F25]">
+          <span>En combien de temps mon bouquet peut-il être livré à Dakar ?</span>
+          <span class="faq-icon text-xl text-[#2E4839] font-mono font-bold">+</span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-sm text-[#5C6E63] font-light leading-relaxed hidden">
+          Nous livrons partout à Dakar (Plateau, Almadies, Fann, Mermoz, Maristes, Parcelles, Yoff...) en moins de 3 heures après validation de votre commande sur WhatsApp. Nous assurons également des livraisons en région et sur toute la Petite Côte (Saly, Somone, Mbour).
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white border border-[#EEDDD4] overflow-hidden shadow-sm">
+        <button class="faq-btn w-full px-6 py-5 text-left font-bold text-base flex justify-between items-center text-[#1F2F25]">
+          <span>Puis-je ajouter un mot personnalisé ou des chocolats au bouquet ?</span>
+          <span class="faq-icon text-xl text-[#2E4839] font-mono font-bold">+</span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-sm text-[#5C6E63] font-light leading-relaxed hidden">
+          Oui, une carte manuscrite avec votre message personnalisé est systématiquement offerte avec chaque bouquet. Vous pouvez également demander lors de votre commande WhatsApp l'ajout d'une boîte de chocolats fins ou de ballons festifs.
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white border border-[#EEDDD4] overflow-hidden shadow-sm">
+        <button class="faq-btn w-full px-6 py-5 text-left font-bold text-base flex justify-between items-center text-[#1F2F25]">
+          <span>Comment régler ma commande de fleurs ?</span>
+          <span class="faq-icon text-xl text-[#2E4839] font-mono font-bold">+</span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-sm text-[#5C6E63] font-light leading-relaxed hidden">
+          Nous acceptons les règlements instantanés via Wave et Orange Money au +221 77 747 54 20, ainsi que les virements bancaires et espèces à la livraison. Les paiements depuis l'étranger via carte bancaire sont également pris en charge.
+        </div>
+      </div>
+
+      <div class="faq-item rounded-2xl bg-white border border-[#EEDDD4] overflow-hidden shadow-sm">
+        <button class="faq-btn w-full px-6 py-5 text-left font-bold text-base flex justify-between items-center text-[#1F2F25]">
+          <span>Comment conserver mon bouquet pour qu'il dure plus longtemps ?</span>
+          <span class="faq-icon text-xl text-[#2E4839] font-mono font-bold">+</span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-sm text-[#5C6E63] font-light leading-relaxed hidden">
+          Coupez les tiges en biseau de 1 à 2 cm avant de les placer dans un vase d'eau propre et fraîche. Renouvelez l'eau tous les deux jours et évitez d'exposer les fleurs directement au soleil ou aux courants d'air chaud.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION CONTACT PRIVILÉGIÉ & HORAIRES ================= -->
+  <section id="contact" class="py-20 px-4 sm:px-8 max-w-5xl mx-auto border-t border-[#EEDDD4]">
+    <div class="p-10 sm:p-14 rounded-3xl bg-white border border-[#EEDDD4] shadow-xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-8 text-left">
+          <div class="text-xs font-mono font-bold uppercase tracking-widest text-[#C86D51] mb-2">SERVICE CLIENT &amp; COMMANDES</div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1F2F25] mb-4">Commandez Votre Émotion Florale</h2>
+          <p class="text-sm text-[#5C6E63] font-light leading-relaxed mb-6">
+            Notre équipe vous accueille et répond à toutes vos demandes de bouquets, personnalisations et livraisons express avec un soin méticuleux.
+          </p>
+          <div class="space-y-2 text-xs font-mono text-[#5C6E63] mb-8">
+            <div>📞 Téléphone / WhatsApp : <a href="tel:+221777475420" class="font-bold text-[#2E4839]">+221 77 747 54 20</a></div>
+            <div>⏰ Horaires d'Atelier : <strong class="text-[#1F2F25]">Lundi – Samedi &bull; 9h00 – 19h00</strong></div>
+            <div>📍 Ville : <strong class="text-[#1F2F25]">Dakar, Sénégal (Livraisons nationales)</strong></div>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20un%20bouquet." target="_blank" rel="noopener" class="px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-[#2E4839] hover:bg-[#C86D51] text-white shadow-xl transition-all">
+              Commander sur WhatsApp →
+            </a>
+            <a href="https://instagram.com/timabouquets" target="_blank" rel="noopener" class="px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-white border border-[#EEDDD4] text-[#2E4839] hover:border-[#2E4839] shadow-sm transition-all flex items-center space-x-2">
+              <span>Instagram @timabouquets</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 flex flex-col items-center justify-center p-8 rounded-3xl bg-[#FAF4EF] border border-[#EEDDD4] text-center">
+          <img src="https://timabouquets.netlify.app/img/logo.png" alt="Timabouquets" class="w-20 h-20 rounded-full mb-4 shadow-md border-2 border-white" />
+          <div class="font-serif font-bold text-xl text-[#1F2F25] mb-1">Timabouquets 💐</div>
+          <div class="text-xs text-[#5C6E63] font-light mb-3">L'Art de faire parler les fleurs</div>
+          <span class="text-[10px] font-mono uppercase tracking-wider px-3 py-1 bg-white rounded-full text-[#C86D51] font-bold shadow-sm">Atelier Ouvert</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER OFFICIEL ================= -->
+  <footer class="py-12 px-4 border-t border-[#EEDDD4] bg-[#FAF4EF] text-center text-xs font-mono text-[#5C6E63]">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <span class="font-bold text-[#1F2F25]">Timabouquets 💐</span>
+        <span>&bull;</span>
+        <span>Dakar, Sénégal</span>
+        <span>&bull;</span>
+        <a href="https://instagram.com/timabouquets" target="_blank" rel="noopener" class="underline hover:text-[#2E4839]">Instagram</a>
+        <span>&bull;</span>
+        <a href="https://www.tiktok.com/@timabouquets" target="_blank" rel="noopener" class="underline hover:text-[#2E4839]">TikTok</a>
+      </div>
+      <div>
+        Design Haute Couture conçu par <a href="https://wa.me/221778690584" target="_blank" class="font-bold underline text-[#2E4839]">Daro TECH</a> Dakar
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= BOUTON WHATSAPP FLOTTANT AVEC EFFET PULSE ================= -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center group">
+    <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20un%20bouquet." target="_blank" rel="noopener" class="mr-3 px-4 py-2.5 rounded-full shadow-2xl text-xs font-bold transition-all duration-300 opacity-95 group-hover:opacity-100 group-hover:scale-105 hidden sm:flex items-center space-x-2.5 bg-white border border-[#EEDDD4] text-[#2E4839]">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span>Commander sur WhatsApp</span>
+    </a>
+    <a href="https://wa.me/221777475420?text=Bonjour%20Timabouquets,%20je%20souhaite%20commander%20un%20bouquet." target="_blank" rel="noopener" class="relative w-16 h-16 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95" title="WhatsApp Timabouquets">
+      <span class="absolute inset-0 rounded-full bg-emerald-400 opacity-40 animate-ping"></span>
+      <svg class="relative z-10 w-8 h-8 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.031 0C5.396 0 0 5.394 0 12.029c0 2.116.552 4.181 1.6 6L.073 24l6.155-1.503a11.97 11.97 0 005.803 1.5c6.635 0 12.03-5.394 12.03-12.029C24.061 5.394 18.666 0 12.031 0zm0 22.023c-1.848 0-3.664-.496-5.253-1.442l-.377-.225-3.896.953.953-3.8-.247-.393a9.96 9.96 0 01-1.533-5.087c0-5.502 4.478-9.98 9.98-9.98 5.503 0 9.98 4.478 9.98 9.98 0 5.502-4.477 9.98-9.98 9.98zm5.474-7.469c-.3-.15-1.775-.876-2.05-.975-.275-.1-.475-.15-.675.15s-.775.975-.95 1.175c-.175.2-.35.225-.65.075-.3-.15-1.266-.467-2.41-1.488-.89-.794-1.49-1.775-1.665-2.075-.175-.3-.018-.462.132-.612.136-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525s-.675-1.625-.925-2.225c-.244-.583-.492-.504-.675-.513-.175-.008-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.116 3.23 5.127 4.532.716.31 1.275.495 1.71.634.72.228 1.375.196 1.893.118.577-.087 1.775-.725 2.025-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- SCRIPT FILTRES ET ACCORDÉONS FAQ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Filtres interactifs des 14 bouquets
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.product-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-[#2E4839]', 'text-white');
+            b.classList.add('bg-white', 'text-[#5C6E63]');
+          });
+          btn.classList.add('active', 'bg-[#2E4839]', 'text-white');
+          btn.classList.remove('bg-white', 'text-[#5C6E63]');
+
+          const filter = btn.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. Accordéon FAQ
+      const faqBtns = document.querySelectorAll('.faq-btn');
+      faqBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const content = item.querySelector('.faq-content');
+          const icon = item.querySelector('.faq-icon');
+          const isOpen = !content.classList.contains('hidden');
+
+          document.querySelectorAll('.faq-item').forEach(other => {
+            other.querySelector('.faq-content').classList.add('hidden');
+            other.querySelector('.faq-icon').textContent = '+';
+          });
+
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.textContent = '−';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
