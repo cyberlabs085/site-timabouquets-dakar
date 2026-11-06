@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-creme: #FAF7F2;
+  --color-cremepure: #FFFFFF;
+  --color-cremedark: #F3EDE4;
+  --color-mousse: #1F3528;
+  --color-moussedark: #13231A;
+  --color-argile: #C0593E;
+  --color-argilehover: #A7482F;
+  --color-orrose: #E8A793;
+  --color-charbon: #161816;
+  --color-textemuted: #6B756D;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Texture Bruit Subtile */
+.noise-bg {
+  background-image: radial-gradient(rgba(31, 53, 40, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Micro-Interactions Magnétiques */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+}
+.btn-magnetic:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Smooth Image Zoom */
+.product-card img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Floating WhatsApp Button Pulse */
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5); }
+  50% { transform: scale(1.06); box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.7); }
+}
+.whatsapp-float-btn {
+  animation: pulseSoft 3s infinite ease-in-out;
+}
+.whatsapp-float-btn:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAF7F2; }
+::-webkit-scrollbar-thumb { background: #C0593E; border-radius: 4px; }
+
+/* Masquer la scrollbar pour le carrousel tactile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
